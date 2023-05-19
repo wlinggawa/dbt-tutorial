@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  # RDS Beta
+  
+  - name: beta
+    database: fivetran_database
+    schema: jaffle_shop
+    tables:
+      - name: orders
+      - name: customers
