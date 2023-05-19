@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from raw.jaffle_shop.customers
+    from {{ source('jaffle_shop', 'customers') }}
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from {{ source('jaffle_shop', 'orders') }}
 
 ),
 
@@ -31,7 +31,7 @@ final as (
         orders.status
     from customers
 
-    left join orders using (customer_id)
+    left join {{ source('jaffle_shop', 'orders') }} using (customer_id)
 
 )
 

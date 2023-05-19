@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from raw.jaffle_shop.customers
+    from {{ source('jaffle_shop', 'customers') }}
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from {{ source('jaffle_shop', 'orders') }}
 
 ),
 
@@ -30,7 +30,7 @@ customer_orders as (
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders
 
-    from orders
+    from {{ source('jaffle_shop', 'orders') }}
 
     group by 1
 

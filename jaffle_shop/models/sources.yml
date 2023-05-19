@@ -3,7 +3,7 @@ version: 2
 sources:
   # poc jaffle shop
   
-  - name: poc
+  - name: jaffle_shop
     database: fivetran_database
     schema: jaffle_shop
     tables:
