@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  # RDS Beta
+  # poc jaffle shop
   
-  - name: beta
+  - name: poc
     database: fivetran_database
     schema: jaffle_shop
     tables:
