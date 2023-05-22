@@ -12,7 +12,8 @@ listings as (
     from {{ ref('src_listings') }}
 ),
 final as (
-    select listings.NAME
+    select listings.ID
+    , listings.NAME
     , listings.PRICE
     , reviews.DATE
     , reviews.REVIEWER_NAME
