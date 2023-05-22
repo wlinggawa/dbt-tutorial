@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: airbnb_raw
+    database: fivetran_database  
+    # schema: airbnb_raw  
+    tables:
+      - name: raw_listings
+      - name: raw_hosts
+      - name: raw_reviews
